@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <th:block th:insert="~{blocks/head_block :: head}"></th:block>
+    <title>Books</title>
+</head>
+
+
+<header th:insert="~{blocks/header :: header}"></header>
+<body >
+
+
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+        <form action="/addfilm" method="post">
+            <input type="hidden" data-th-name="${_csrf.parameterName}"
+                   data-th-value="${_csrf.token}"> <!-- CSRF токен -->
+
+            <h1 class="h3 mb-3 fw-normal">Добавление сеанса</h1>
+
+            <div class="form-floating mb-2">
+                <input type="text" class="form-control" id="title" placeholder="Название фильма" name="title" required>
+                <label for="title">Название фильма</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input type="text" class="form-control" id="studio" placeholder="Киностудия" name="studio" required>
+                <label for="studio">Киностудия</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input type="datetime-local" class="form-control" id="sessionDateTime" placeholder="Дата и время сеанса" name="sessionDateTime" required>
+                <label for="sessionDateTime">Дата и время сеанса</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input type="number" class="form-control" id="ticketCount" placeholder="Количество билетов" name="ticketCount" required>
+                <label for="ticketCount">Количество билетов</label>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<!--<main class="form-signin w-50 m-auto" >-->
+<!--    <form style="margin-top: 10%">-->
+
+<!--        <h1 class="h3 mb-3 fw-normal">Вход в учетную запись</h1>-->
+
+<!--        <div class="form-floating">-->
+<!--            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">-->
+<!--            <label for="floatingInput">Email</label>-->
+<!--        </div>-->
+<!--        <div class="form-floating">-->
+<!--            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">-->
+<!--            <label for="floatingPassword">Пароль</label>-->
+<!--        </div>-->
+
+<!--        <a style="text-decoration: none" href="#">Зарегистрироваться</a>-->
+<!--        <button class="btn btn-primary w-100 py-2" type="submit">Войти</button>-->
+
+<!--        <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>-->
+<!--    </form>-->
+<!--</main>-->
+
+
+<footer class="container py-5" th:insert="~{blocks/footer :: footer}"></footer>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
